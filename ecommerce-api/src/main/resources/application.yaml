@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: ecommerce-api
+  datasource:
+    url:  jdbc:mysql://localhost:3306/ecommerce_app
+    username: root
+    password: 169251
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
