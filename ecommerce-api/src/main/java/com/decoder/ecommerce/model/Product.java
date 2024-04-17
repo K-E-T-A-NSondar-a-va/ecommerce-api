@@ -1,7 +1,9 @@
 package com.decoder.ecommerce.model;
 
 import jakarta.persistence.*;
-import org.hibernate.engine.jdbc.Size;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -10,6 +12,8 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
+@Data
+@AllArgsConstructor
 public class Product {
 
     @Id
@@ -28,6 +32,7 @@ public class Product {
     @ElementCollection
     @Column(name = "sizes")
     private Set<Size> sizes = new HashSet<>();
+
     @Column(name = "image_url")
     private String imageUrl;
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -46,26 +51,26 @@ public class Product {
 
     public Product() {}
 
-    public Product(Long id, String title, String description, int price, int discountedPrice, int discountPercent, int quantity, String brand, String color, Set<Size> sizes, String imageUrl, List<Rating> ratings, List<Review> reviews, int numRatings, Category category, LocalDateTime createdAt) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.price = price;
-        this.discountedPrice = discountedPrice;
-        this.discountPercent = discountPercent;
-        this.quantity = quantity;
-        this.brand = brand;
-        this.color = color;
-        this.sizes = sizes;
-        this.imageUrl = imageUrl;
-        this.ratings = ratings;
-        this.reviews = reviews;
-        this.numRatings = numRatings;
-        this.category = category;
-        this.createdAt = createdAt;
-    }
+//    public Product(Long id, String title, String description, int price, int discountedPrice, int discountPercent, int quantity, String brand, String color, Set<Size> sizes, String imageUrl, List<Rating> ratings, List<Review> reviews, int numRatings, Category category, LocalDateTime createdAt) {
+//        this.id = id;
+//        this.title = title;
+//        this.description = description;
+//        this.price = price;
+//        this.discountedPrice = discountedPrice;
+//        this.discountPercent = discountPercent;
+//        this.quantity = quantity;
+//        this.brand = brand;
+//        this.color = color;
+//        this.sizes = sizes;
+//        this.imageUrl = imageUrl;
+//        this.ratings = ratings;
+//        this.reviews = reviews;
+//        this.numRatings = numRatings;
+//        this.category = category;
+//        this.createdAt = createdAt;
+//    }
 
-    public Long getId() {
+/*    public Long getId() {
         return id;
     }
 
@@ -191,5 +196,5 @@ public class Product {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
-    }
+    }*/
 }
