@@ -1,4 +1,4 @@
-package com.decoder.ecommerce.service;
+package com.decoder.ecommerce.implementation;
 
 import com.decoder.ecommerce.exception.ProductException;
 import com.decoder.ecommerce.model.Product;
@@ -6,6 +6,8 @@ import com.decoder.ecommerce.model.Rating;
 import com.decoder.ecommerce.model.User;
 import com.decoder.ecommerce.repository.RatingRepository;
 import com.decoder.ecommerce.request.RatingRequest;
+import com.decoder.ecommerce.service.ProductService;
+import com.decoder.ecommerce.service.RatingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

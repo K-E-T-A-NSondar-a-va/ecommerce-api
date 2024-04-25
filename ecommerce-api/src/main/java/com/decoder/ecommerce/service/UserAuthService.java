@@ -2,7 +2,10 @@ package com.decoder.ecommerce.service;
 
 import com.decoder.ecommerce.config.JwtProvider;
 import com.decoder.ecommerce.exception.UserException;
+import com.decoder.ecommerce.implementation.CustomUserDetailServiceImpl;
+import com.decoder.ecommerce.model.Cart;
 import com.decoder.ecommerce.model.User;
+import com.decoder.ecommerce.repository.CartRepository;
 import com.decoder.ecommerce.repository.UserRepository;
 import com.decoder.ecommerce.request.LoginRequest;
 import com.decoder.ecommerce.response.AuthResponse;
@@ -27,11 +30,18 @@ public class UserAuthService {
     private JwtProvider jwtProvider;
 
     @Autowired
+    private CartService cartService;
+
+    @Autowired
+    private CartRepository cartRepository;
+
+    @Autowired
     private CustomUserDetailServiceImpl customUserDetailService;
 
     public UserAuthService() {}
 
     public AuthResponse registerUser(User user) throws UserException {
+
         String email = user.getEmail();
         String password = user.getPassword();
         String firstName = user.getFirstName();
@@ -58,6 +68,8 @@ public class UserAuthService {
         AuthResponse authResponse = new AuthResponse();
         authResponse.setJwt(token);
         authResponse.setMessage("Registered Successfully!");
+
+        Cart cart = cartService.createCart(createdUser);
 
         return authResponse;
     }

@@ -1,4 +1,4 @@
-package com.decoder.ecommerce.service;
+package com.decoder.ecommerce.implementation;
 
 import com.decoder.ecommerce.model.User;
 import com.decoder.ecommerce.repository.UserRepository;

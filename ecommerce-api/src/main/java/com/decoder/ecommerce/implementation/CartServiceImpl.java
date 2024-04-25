@@ -1,4 +1,4 @@
-package com.decoder.ecommerce.service;
+package com.decoder.ecommerce.implementation;
 
 import com.decoder.ecommerce.exception.ProductException;
 import com.decoder.ecommerce.model.Cart;
@@ -7,6 +7,9 @@ import com.decoder.ecommerce.model.Product;
 import com.decoder.ecommerce.model.User;
 import com.decoder.ecommerce.repository.CartRepository;
 import com.decoder.ecommerce.request.AddItemRequest;
+import com.decoder.ecommerce.service.CartItemService;
+import com.decoder.ecommerce.service.CartService;
+import com.decoder.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,9 +1,10 @@
-package com.decoder.ecommerce.service;
+package com.decoder.ecommerce.implementation;
 
 import com.decoder.ecommerce.config.JwtProvider;
 import com.decoder.ecommerce.exception.UserException;
 import com.decoder.ecommerce.model.User;
 import com.decoder.ecommerce.repository.UserRepository;
+import com.decoder.ecommerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,5 +33,9 @@ public class UserServiceImpl implements UserService {
             throw new UserException("User not found with email: "+email);
         }
         return user;
+    }
+
+    public Long findUserIdByEmail(String email) {
+        return userRepository.findByEmail(email).getId();
     }
 }

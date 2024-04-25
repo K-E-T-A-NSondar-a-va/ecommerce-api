@@ -1,4 +1,4 @@
-package com.decoder.ecommerce.service;
+package com.decoder.ecommerce.implementation;
 
 
 import com.decoder.ecommerce.exception.ProductException;
@@ -7,6 +7,8 @@ import com.decoder.ecommerce.model.Product;
 import com.decoder.ecommerce.repository.CategoryRepository;
 import com.decoder.ecommerce.repository.ProductRepository;
 import com.decoder.ecommerce.request.CreateProductRequest;
+import com.decoder.ecommerce.service.ProductService;
+import com.decoder.ecommerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -43,6 +45,7 @@ public class ProductServiceImpl implements ProductService {
         Category secondLevel = categoryRepository.findByNameAndParent(request.getSecondLevelCategory(), topLevel.getName());
         if(secondLevel == null) {
             Category secondLevelCategory = new Category();
+            secondLevelCategory.setName(request.getSecondLevelCategory());
             secondLevelCategory.setParentCategory(topLevel);
             secondLevelCategory.setLevel(2);
 
@@ -52,6 +55,7 @@ public class ProductServiceImpl implements ProductService {
         Category thirdLevel = categoryRepository.findByNameAndParent(request.getThirdLevelCategory(), secondLevel.getName());
         if(thirdLevel == null) {
             Category thirdLevelCategory = new Category();
+            thirdLevelCategory.setName(request.getThirdLevelCategory());
             thirdLevelCategory.setParentCategory(secondLevel);
             thirdLevelCategory.setLevel(3);
 

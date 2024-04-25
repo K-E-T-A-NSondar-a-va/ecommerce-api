@@ -29,8 +29,8 @@ public class ProductController {
                                                                       @RequestParam Integer pageNumber,
                                                                       @RequestParam Integer pageSize) {
 
+        System.out.println("top level category: "+category);
         Page<Product> result = productService.getAllProducts(category, color, size, minPrice, maxPrice, minDiscount, sort, stock, pageNumber, pageSize);
-
         System.out.println("all products are listed above");
         return new ResponseEntity<>(result, HttpStatus.ACCEPTED);
     }

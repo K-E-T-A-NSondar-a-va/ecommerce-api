@@ -18,7 +18,7 @@ public class OrderItem {
     private Long id;
     @JsonIgnore
     @ManyToOne
-    private Order order;
+    private PurchaseOrder purchaseOrder;
     @ManyToOne
     private Product product;
     private String size;

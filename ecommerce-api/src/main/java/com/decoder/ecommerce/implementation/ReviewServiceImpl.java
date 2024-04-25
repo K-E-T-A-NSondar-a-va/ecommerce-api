@@ -1,4 +1,4 @@
-package com.decoder.ecommerce.service;
+package com.decoder.ecommerce.implementation;
 
 import com.decoder.ecommerce.exception.ProductException;
 import com.decoder.ecommerce.model.Product;
@@ -7,6 +7,8 @@ import com.decoder.ecommerce.model.User;
 import com.decoder.ecommerce.repository.ProductRepository;
 import com.decoder.ecommerce.repository.ReviewRepository;
 import com.decoder.ecommerce.request.ReviewRequest;
+import com.decoder.ecommerce.service.ProductService;
+import com.decoder.ecommerce.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,6 +38,6 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     public List<Review> getAllReview(Long productId) {
-        return reviewRepository.getAllReviewByProductId(productId);
+        return reviewRepository.getAllReviewByProductId(productId );
     }
 }

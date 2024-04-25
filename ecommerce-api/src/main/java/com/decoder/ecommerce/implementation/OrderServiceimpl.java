@@ -1,11 +1,13 @@
-package com.decoder.ecommerce.service;
+package com.decoder.ecommerce.implementation;
 
 import com.decoder.ecommerce.exception.OrderException;
 import com.decoder.ecommerce.model.Address;
-import com.decoder.ecommerce.model.Order;
+import com.decoder.ecommerce.model.PurchaseOrder;
 import com.decoder.ecommerce.model.User;
 import com.decoder.ecommerce.repository.CartItemRepository;
 import com.decoder.ecommerce.repository.CartRepository;
+import com.decoder.ecommerce.service.OrderService;
+import com.decoder.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,47 +24,47 @@ public class OrderServiceimpl implements OrderService {
     private ProductService productService;
 
     @Override
-    public Order createOrder(User user, Address shippingAddress) {
+    public PurchaseOrder createOrder(User user, Address shippingAddress) {
         return null;
     }
 
     @Override
-    public Order findOrderById(Long orderId) throws OrderException {
+    public PurchaseOrder findOrderById(Long orderId) throws OrderException {
         return null;
     }
 
     @Override
-    public List<Order> userOrdreHistory(Long userId) {
+    public List<PurchaseOrder> userOrdreHistory(Long userId) {
         return null;
     }
 
     @Override
-    public Order placedOrder(Long orderId) throws OrderException {
+    public PurchaseOrder placedOrder(Long orderId) throws OrderException {
         return null;
     }
 
     @Override
-    public Order confirmedOrder(Long orderId) throws OrderException {
+    public PurchaseOrder confirmedOrder(Long orderId) throws OrderException {
         return null;
     }
 
     @Override
-    public Order shippedOrder(Long orderId) throws OrderException {
+    public PurchaseOrder shippedOrder(Long orderId) throws OrderException {
         return null;
     }
 
     @Override
-    public Order deliveredOrder(Long orderId) throws OrderException {
+    public PurchaseOrder deliveredOrder(Long orderId) throws OrderException {
         return null;
     }
 
     @Override
-    public Order caceledOrder(Long orderId) throws OrderException {
+    public PurchaseOrder caceledOrder(Long orderId) throws OrderException {
         return null;
     }
 
     @Override
-    public List<Order> getAllOrders() {
+    public List<PurchaseOrder> getAllOrders() {
         return null;
     }
 
