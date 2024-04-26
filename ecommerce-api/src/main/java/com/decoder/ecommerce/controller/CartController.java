@@ -7,6 +7,7 @@ import com.decoder.ecommerce.request.AddItemRequest;
 import com.decoder.ecommerce.response.AddItemResponse;
 import com.decoder.ecommerce.service.CartService;
 import com.decoder.ecommerce.service.UserService;
+import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +33,7 @@ public class CartController {
         return ResponseEntity.ok(cartService.findUserCart(userId));
     }
 
+//    @Hidden // swagger annotation to hide this method in the documentation
     @PutMapping("/cart/add")
     public ResponseEntity<AddItemResponse> addItemToCart(Principal principal, @RequestBody AddItemRequest addItemRequest) throws ProductException {
         Long userId = userRepository.findByEmail(principal.getName()).getId();
