@@ -23,7 +23,7 @@ public class User {
     private String mobile;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Address> address = new ArrayList<>();
+    private List<Address> addresses = new ArrayList<>();
 
     @Embedded
     @ElementCollection
@@ -42,7 +42,7 @@ public class User {
 
     public User() {}
 
-    public User(Long id, String firstName, String lastName, String password, String email, String role, String mobile, List<Address> address, List<PaymentInformation> paymentInformation, List<Rating> ratings, List<Review> reviews, LocalDateTime createdAt) {
+    public User(Long id, String firstName, String lastName, String password, String email, String role, String mobile, List<Address> addresses, List<PaymentInformation> paymentInformation, List<Rating> ratings, List<Review> reviews, LocalDateTime createdAt) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -50,7 +50,7 @@ public class User {
         this.email = email;
         this.role = role;
         this.mobile = mobile;
-        this.address = address;
+        this.addresses = addresses;
         this.paymentInformation = paymentInformation;
         this.ratings = ratings;
         this.reviews = reviews;
@@ -113,12 +113,12 @@ public class User {
         this.mobile = mobile;
     }
 
-    public List<Address> getAddress() {
-        return address;
+    public List<Address> getAddresses() {
+        return addresses;
     }
 
-    public void setAddress(List<Address> address) {
-        this.address = address;
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
     }
 
     public List<PaymentInformation> getPaymentInformation() {
